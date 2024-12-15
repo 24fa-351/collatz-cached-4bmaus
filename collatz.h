@@ -1,11 +1,11 @@
 #ifndef COLLATZ_H
 #define COLLATZ_H
 
+#include "cache.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "cache.h"
 
 unsigned long long int collatz_steps(unsigned long long int n) {
   unsigned long long int steps = 0;
@@ -51,4 +51,4 @@ CachePolicy get_policy(const char *policy) {
   return CACHE_NONE;
 }
 
-#endif  // COLLATZ_H
+#endif // COLLATZ_H
