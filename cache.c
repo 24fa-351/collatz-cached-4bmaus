@@ -53,7 +53,8 @@ int find_entry_to_evict(Cache *cache, CachePolicy policy) {
   } else if (policy == CACHE_LRU) {
     int evict_index = 0;
     for (int iy = 1; iy < cache->entries_count; iy++) {
-      if (cache->entries[iy].key_usage < cache->entries[evict_index].key_usage) {
+      if (cache->entries[iy].key_usage <
+          cache->entries[evict_index].key_usage) {
         evict_index = iy;
       }
     }
