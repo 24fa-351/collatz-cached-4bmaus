@@ -16,7 +16,14 @@ typedef struct {
   int entries_count;
 } Cache;
 
-typedef enum { CACHE_NONE, CACHE_LRU, CACHE_LFU, CACHE_FIFO, CACHE_MRU, CACHE_RANDOM } CachePolicy;
+typedef enum {
+  CACHE_NONE,
+  CACHE_LRU,
+  CACHE_LFU,
+  CACHE_FIFO,
+  CACHE_MRU,
+  CACHE_RANDOM
+} CachePolicy;
 
 Cache *initialize(int capacity);
 CacheEntry *lookup(Cache *cache, int key);
@@ -26,4 +33,4 @@ int find_entry_to_evict(Cache *cache, CachePolicy policy);
 void evict(Cache *cache, int entry_index);
 void update(Cache *cache, int key, int new_data);
 
-#endif  // CACHE_H
+#endif // CACHE_H
